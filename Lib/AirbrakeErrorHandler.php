@@ -12,13 +12,13 @@ class AirbrakeErrorHandler extends ErrorHandler
 	/**
 	 * Creates a new Airbrake Notifier instance, or returns an instance created earlier.
 	 *
-	 * You should set credentials to Airbrake\Notifier by setting the CakeBreak.credentials
+	 * You should set credentials to Airbrake\Notifier by setting the CakeBrake.credentials
 	 * configuration property.
 	 *
 	 * To set the project id and project key:
 	 *
 	 * ```
-	 * Configure::write('CakeBreak.credentials', [
+	 * Configure::write('CakeBrake.credentials', [
 	 *  'projectId' => 12345,
 	 *  'projectKey' => 'abcdefg'
 	 * ]);
@@ -30,7 +30,7 @@ class AirbrakeErrorHandler extends ErrorHandler
 		static $notifier = null;
 
 		if ($notifier === null) {
-			$credentials = Configure::read('CakeBreak.credentials');
+			$credentials = Configure::read('CakeBrake.credentials');
 
 			$notifier = new AirbrakeNotifier($credentials);
 		}
@@ -45,7 +45,7 @@ class AirbrakeErrorHandler extends ErrorHandler
 	 * Example:
 	 *
 	 * ```
-	 * Configure::write('CakeBreak.options', [
+	 * Configure::write('CakeBrake.options', [
 	 *  'environment' => 'production'
 	 * ]);
 	 * ```
@@ -54,7 +54,7 @@ class AirbrakeErrorHandler extends ErrorHandler
 	 *
 	 */
 	private static function getOptions() {
-		$options = Configure::read('CakeBreak.options');
+		$options = Configure::read('CakeBrake.options');
 
 		if ($options === null)
 			return [];
