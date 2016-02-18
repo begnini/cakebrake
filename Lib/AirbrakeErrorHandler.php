@@ -124,8 +124,10 @@ class AirbrakeErrorHandler extends ErrorHandler
 			$notice['context']['errorMessage'] = $description;
 			$notice['context']['extraParameters'] = array('CakeTrace' => $trace);
 
-			$notices['context'] = array_merge($notices['context'], $requestParams);
-			$notices['content'] = array_merge($notices['context'], $options);
+			$notice['context'] = array_merge($notice['context'], $requestParams);
+			$notice['context'] = array_merge($notice['context'], $options);
+
+			return $notice;
 		});
 
 		$notifier->notify($exception);
