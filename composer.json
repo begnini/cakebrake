@@ -1,0 +1,20 @@
+{
+  "name": "begnini/cakebrake",
+  "description": "Airbrake exception and error notifier for CakePHP",
+  "keywords": ["airbrake", "cakephp", "notifier", "exception", "error", "logging"],
+  "authors": [
+    {
+      "name": "Humberto Pereira",
+      "email": "begnini@gmail.com"
+    }
+  ],
+  "license": "MIT",
+  "type": "cakephp-plugin",
+  "extra": {
+    "installer-name": "CakeBrake"
+  },
+  "require": {
+    "php": ">=5.4.0",
+    "airbrake/phpbrake": "0.12"
+  }
+}
